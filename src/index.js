@@ -14,8 +14,9 @@ const loaderText = document.querySelector('.loader');
 const errorText = document.querySelector('.error');
 
 
-loaderText.hidden = true;
+loaderText.hidden = false;
 errorText.hidden = true;
+
 
 const BASE_URL = `https://api.thecatapi.com/v1/breeds`;
 
@@ -23,7 +24,8 @@ const BASE_URL = `https://api.thecatapi.com/v1/breeds`;
 fetchBreeds(BASE_URL).then((data) => {
     selectEl.innerHTML = '<option data-placeholder="true"></option>';
     const selectMarkup = createMarkup(data);
-    selectEl.insertAdjacentHTML("beforeend", selectMarkup)
+    selectEl.insertAdjacentHTML("beforeend", selectMarkup);
+    loaderText.hidden = true;
 
     new SlimSelect({
         select: '#selectElement',
