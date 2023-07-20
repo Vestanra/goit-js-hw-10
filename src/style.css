@@ -1,0 +1,84 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.02em;
+    background-color: rgb(255, 255, 255);
+}
+p,
+h1,
+h2 {
+    margin: 0;
+}
+.container {
+    max-width: 1158px;
+    padding: 0 15px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+img {
+    display: block;
+    max-width: 500px;
+    height: auto;
+    border: 2px solid lightgrey;
+}
+.cat-info {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+.breed-select {
+    min-width: 500px;
+}
+.cat-text {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid lightgray;
+
+}
+.cat-temerament-title {
+    font-weight: bold;
+}
+
+.loader {
+    position: relative;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.loader:before {
+    content: "Loading data, please wait...";
+    color: #fff;
+}
+
+.loader:after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #ff3d00;
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    margin-top: 120px;
+    top: -70px;
+    animation: motion 3s ease-in-out infinite;
+}
+
+@keyframes motion {
+
+    0%,
+    50%,
+    100% {
+        transform: translateX(0) scale(1);
+    }
+
+    25% {
+        transform: translateX(-100px) scale(0.3);
+    }
+
+    75% {
+        transform: translateX(100px) scale(0.3);
+    }
+}
