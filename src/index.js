@@ -13,13 +13,10 @@ const divEl = document.querySelector('.cat-info');
 const loaderText = document.querySelector('.loader');
 const errorText = document.querySelector('.error');
 
-
 loaderText.hidden = false;
 errorText.hidden = true;
 
-
 const BASE_URL = `https://api.thecatapi.com/v1/breeds`;
-
 
 fetchBreeds(BASE_URL).then((data) => {
     selectEl.innerHTML = '<option data-placeholder="true"></option>';
@@ -29,16 +26,11 @@ fetchBreeds(BASE_URL).then((data) => {
 
     new SlimSelect({
         select: '#selectElement',
-        settings: {
-    
-        }
     })
 })
     .catch(error => {
         Notiflix.Notify.failure(`${errorText.textContent}`)
-        // errorText.hidden = false
     });
-
 
 function createMarkup(arr) {
     return arr.map((el) => `<option value="${el.id}">${el.name}</option>`).join('')
